@@ -42,5 +42,6 @@ p {
 }
 
 div {
+  text-align: center;
   animation: fadeIn 1s;
 }

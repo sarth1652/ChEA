@@ -9,6 +9,10 @@ function Placements() {
       <p>
         Sarth Sorte - Google (45 LPA)
       </p>
+      <p>Abhay Kumar Choudhary - SLB</p>
+      <p>Om Shiv Sharma - Microsoft</p>
+      <p>Rudra - ONGC, Mumbai</p>
+
     </div>
   );
 }

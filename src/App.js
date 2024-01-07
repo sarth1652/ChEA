@@ -18,7 +18,15 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/placements" element={<Placements />} />
-        <Route path="/" element={<h1>Welcome to the Chemical Association Website</h1>} />
+        
+        <Route path="/" element={
+        <div> 
+          <h1>Welcome to the Chemical Association Website!</h1>
+          <h2>BITS Pilani</h2>
+
+          <h3>Developed By: sarth1652</h3>
+        </div>
+        } />
       </Routes>
     </Router>
   );
