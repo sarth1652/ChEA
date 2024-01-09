@@ -1,41 +1,81 @@
-/* App.css */
+/* Reset and base styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  color: #333; /* Default text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
 }
 
+/* Navbar styles */
 .navbar {
-  background-color: limegreen;
+  background-color: blueviolet;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
   overflow: hidden;
 }
 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: white; /* Ensuring logo text is visible */
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
 .nav-link {
-  float: left;
-  display: block;
+  margin-left: 20px;
   color: white;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: color 0.3s;
 }
 
 .nav-link:hover {
+  color: white;
   background-color: #ddd;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color:black;
+  color: #fff;
+}
+
+body.dark-mode .navbar {
+  background-color: limegreen;
+}
+
+body.dark-mode .nav-link {
+  color: white;
+}
+
+body.dark-mode .nav-link:hover {
   color: black;
+  background-color: white;
 }
 
-/* Additional styling for other components */
+/* Additional styles */
 h1, h2 {
-  color: #333;
+  color: inherit; /* Inherits color from body for consistency */
 }
 
-p {
-  color: #666;
-}
-
-/* Simple fade-in animation */
+/* Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -44,4 +84,75 @@ p {
 div {
   text-align: center;
   animation: fadeIn 1s;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dark-mode-toggle:focus {
+  outline: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .navbar-links {
+    display: none; /* Hide navbar links on small screens */
+  }
+
+  /* You can add a hamburger menu icon and functionality here */
+}
+
+.registration-box {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.registration-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.register-link {
+  color: blueviolet;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.register-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: blueviolet;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.register-link:hover {
+  color: darkviolet;
+}
+
+.register-link:hover::after {
+  visibility: visible;
+  transform: scaleX(1);
 }
